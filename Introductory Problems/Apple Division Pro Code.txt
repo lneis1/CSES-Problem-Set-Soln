@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n; cin >> n;
+    vector <int> a(n);
+    for (auto &x : a) cin >> x;
+    long long mn = 1e11;
+    for (int i = 0; i < (1 << n); i++){
+        long long diff = 0;
+        for (int j = 0; j < n; j++){
+            if (i >> j & 1) diff += a[j];
+            else diff -= a[j];
+        }
+        
+        mn = min(mn, abs(diff));
+    }
+    cout << mn << "\n";
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    int x=pow(10,9)+7;
+    int y=1;
+    for(int i=1; i<n+1; i++){
+           y=y*2;
+           y=y%x;
+    }
+    cout<<y;
+    return 0;
+}
